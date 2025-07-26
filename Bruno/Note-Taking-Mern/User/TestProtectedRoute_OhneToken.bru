@@ -1,17 +1,13 @@
 meta {
-  name: TestProtectedRoute_MitToken
+  name: TestProtectedRoute_OhneToken
   type: http
-  seq: 5
+  seq: 3
 }
 
 get {
   url: {{HostURL}}/api/protected
   body: none
-  auth: bearer
-}
-
-auth:bearer {
-  token: {{access_token}}
+  auth: none
 }
 
 body:json {

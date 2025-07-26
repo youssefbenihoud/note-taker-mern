@@ -3,7 +3,8 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
-const { protect } = require('./middleware/authMiddleware'); // <-- neu
+const { protect } = require('./middleware/authMiddleware');
+const notesRoutes = require('./routes/notesRoutes'); // <-- neu
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -15,7 +16,8 @@ connectDB();
 app.use(express.json());
 
 // Routen
-app.use('/api/auth', authRoutes); // <-- neue Auth-Routen
+app.use('/api/auth', authRoutes);
+app.use('/api/notes', notesRoutes); // <-- neue Notizen-Routen
 
 // Test-Route (kann später entfernt werden)
 app.get('/api/test', (req, res) => {
