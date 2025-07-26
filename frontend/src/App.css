@@ -139,3 +139,55 @@
 .note-card small {
   color: #777;
 }
+
+/* Create Note */
+
+.create-note {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.create-note form > div {
+  margin-bottom: 1rem;
+}
+
+.create-note label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.create-note input[type="text"],
+.create-note textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.create-note input[type="color"] {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.create-note button[type="submit"] {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.btn-cancel {
+  background: #666;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}

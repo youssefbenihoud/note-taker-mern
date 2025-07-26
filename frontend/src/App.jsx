@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import CreateNote from './pages/CreateNote.jsx';
 import NotFound from './pages/NotFound.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Navbar from './components/Navbar.jsx';
@@ -27,6 +28,14 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route
+              path="/create"
+              element={
+                <PrivateRoute>
+                  <CreateNote />
+                </PrivateRoute>
+        }
+          />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
