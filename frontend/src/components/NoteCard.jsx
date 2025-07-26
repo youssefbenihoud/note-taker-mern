@@ -1,6 +1,8 @@
 // frontend/src/components/NoteCard.js
 
 import React from 'react';
+// frontend/src/components/NoteCard.js
+
 import { useNavigate } from 'react-router-dom';
 
 function NoteCard({ note }) {
@@ -15,6 +17,16 @@ function NoteCard({ note }) {
       <h3>{note.title}</h3>
       <p>{note.content.substring(0, 100)}{note.content.length > 100 ? '...' : ''}</p>
       <small>{new Date(note.createdAt).toLocaleDateString()}</small>
+      <div className="card-footer">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate(`/notes/${note._id}/edit`);
+          }}
+        >
+          Bearbeiten
+        </button>
+      </div>
     </div>
   );
 }

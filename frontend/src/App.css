@@ -191,3 +191,24 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* Edit Note */
+
+.card-footer {
+  margin-top: 0.75rem;
+  text-align: right;
+}
+
+.card-footer button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.card-footer button:hover {
+  background: #1565c0;
+}

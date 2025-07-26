@@ -5,6 +5,7 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import CreateNote from './pages/CreateNote.jsx';
+import EditNote from './pages/EditNote.jsx';
 import NotFound from './pages/NotFound.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Navbar from './components/Navbar.jsx';
@@ -36,6 +37,14 @@ function App() {
                 </PrivateRoute>
         }
           />
+          <Route
+            path="/notes/:id/edit"
+            element={
+            <PrivateRoute>
+            <EditNote />
+            </PrivateRoute>
+      }
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
