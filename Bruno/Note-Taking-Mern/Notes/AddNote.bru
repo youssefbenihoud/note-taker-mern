@@ -1,0 +1,23 @@
+meta {
+  name: AddNote
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{HostURL}}/api/notes
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+    "title": "Einkaufsliste",
+    "content": "Milch, Brot, Eier",
+    "color": "#ffeb3b"
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: AddUser
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{HostURL}}/api/auth/register
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Max Mustermann",
+    "email": "max@example.com",
+    "password": "geheim123"
+  }
+}

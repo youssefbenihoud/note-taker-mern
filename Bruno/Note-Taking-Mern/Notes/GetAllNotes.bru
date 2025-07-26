@@ -1,0 +1,23 @@
+meta {
+  name: GetAllNotes
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{HostURL}}/api/notes
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+    "title": "Einkaufsliste",
+    "content": "Milch, Brot, Eier",
+    "color": "#ffeb3b"
+  }
+}

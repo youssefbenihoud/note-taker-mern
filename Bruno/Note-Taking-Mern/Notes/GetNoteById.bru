@@ -1,0 +1,27 @@
+meta {
+  name: GetNoteById
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{HostURL}}/api/notes/{{id}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+    "title": "Einkaufsliste",
+    "content": "Kartoffeln",
+    "color": "#ffeb3b"
+  }
+}
+
+vars:pre-request {
+  id: 688520967f31010dc62960ad
+}
