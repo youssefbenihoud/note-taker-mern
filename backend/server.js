@@ -3,8 +3,9 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
+const notesRoutes = require('./routes/notesRoutes');
 const { protect } = require('./middleware/authMiddleware');
-const notesRoutes = require('./routes/notesRoutes'); // <-- neu
+const cors = require('cors'); // <-- neu
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -15,22 +16,19 @@ connectDB();
 // Middleware
 app.use(express.json());
 
+// CORS konfigurieren
+app.use(cors({
+  origin: 'http://localhost:5173', // Nur dein Frontend darf zugreifen
+  credentials: true, // Erlaubt Cookies/Authorization-Header (später relevant)
+}));
+
 // Routen
 app.use('/api/auth', authRoutes);
-app.use('/api/notes', notesRoutes); // <-- neue Notizen-Routen
+app.use('/api/notes', notesRoutes);
 
-// Test-Route (kann später entfernt werden)
+// Test-Route
 app.get('/api/test', (req, res) => {
   res.json({ message: 'Server is running!' });
-});
-
-// Geschützte Testroute
-app.get('/api/protected', protect, (req, res) => {
-  res.json({
-    success: true,
-    message: `Hallo ${req.user.name}, du hast Zugriff!`,
-    user: req.user,
-  });
 });
 
 // Starte Server
