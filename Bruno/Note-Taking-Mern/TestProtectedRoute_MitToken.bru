@@ -1,0 +1,22 @@
+meta {
+  name: TestProtectedRoute_MitToken
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{HostURL}}/api/protected
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{access_token}}
+}
+
+body:json {
+  {
+    "email": "max@example.com",
+    "password": "secret123"
+  }
+}
